@@ -1,18 +1,29 @@
 "use client";
-import { Box, Button } from "@mui/material";
-import { lightTheme, darkTheme } from "../../theme/theme";
-import { useTheme } from "@emotion/react";
+import { Box, Typography } from "@mui/material";
 
 export default function Home() {
-
   return (
     <Box
-      style={{
-        backgroundColor: "#000000",
-        minHeight: "100vh",
-        width: "100%",
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      alignItems="center"
+      gap={3}
+      sx={{
+        minHeight: "42vh",
+        textAlign: "center",
+        justifyContent: "center",
+        padding: "200px",
       }}
     >
+      <Typography
+        sx={{
+          fontSize: "42px",
+          weight: "700",
+        }}
+      >
+        GVM-UI Template
+      </Typography>
     </Box>
   );
 }

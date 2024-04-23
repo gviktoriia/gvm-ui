@@ -1,58 +1,96 @@
 'use client';
-import { Roboto } from 'next/font/google';
+import { PaletteMode } from "@mui/material";
 import { createTheme } from '@mui/material/styles';
-import { css } from '@emotion/react';
-
-const roboto = Roboto({
-  weight: ['300', '400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-});
 
 export const lightTheme = createTheme({
-    palette: {
-      primary: {
-        main: '#2F27CE',
-      },
-      secondary: {
-        main: '#DDDBFF',
-      },
-      mode: 'light',
+  palette: {
+    mode: 'light', 
+    primary: {
+      main: '#6342d2',
+      contrastText: '#ffffff',
     },
+    secondary: {
+      main: '#605b71',
+      contrastText: '#ffffff',
+    },
+    text: {
+      primary: '#1c1b1e',
+      secondary: '#1c1b1e',
+    },
+    background: {
+      default: '#fffbff',
+      paper: '#fffbff',
+    },
+    error: {
+      main: '#ba1b1b',
+      contrastText: '#ffffff',
+    },
+    success: {
+      main: '#006e10',
+      contrastText: '#ffffff',
+    },
+    info: {
+      main: '#0062a2',
+      contrastText: '#ffffff',
+    },
+    warning: {
+      main: '#606200',
+      contrastText: '#313300',
+    },
+    divider: '#79757f',
+  },
 });
-  
+
+
 export const darkTheme = createTheme({
-    palette: {
-      primary: {
-        main: '#3A31D8',
-      },
-      secondary: {
-        main: '#020024',
-      },
-      mode: 'dark',
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#cdbeff',
+      contrastText: '#32009a',
     },
+    secondary: {
+      main: '#cac3dc',
+      contrastText: '#322e41',
+    },
+    text: {
+      primary: '#e6e1e6',
+      secondary: '#e6e1e6',
+    },
+    background: {
+      default: '#1c1b1e',
+      paper: '#1c1b1e',
+    },
+    error: {
+      main: '#ffb4a9',
+      contrastText: '#680003',
+    },
+    success: {
+      main: '#79dd72',
+      contrastText: '#003a03',
+    },
+    info: {
+      main: '#99cbff',
+      contrastText: '#003257',
+    },
+    warning: {
+      main: '#cace09',
+      contrastText: '#313300',
+    },
+    divider: '#938f99',
+  },
 });
 
-const theme = createTheme({
-    typography: {
-        fontFamily: roboto.style.fontFamily,
-    },
-});
-
-
-export const globalStyles = css`
-  :root {
-    body {
-      background-color: #FBFBFE;
-      color: #050316;
-    }
+export const getDesignTokens = (mode: PaletteMode) => ({
+  palette: {
+    mode,
+    ...(mode === 'light'
+      ? {
+          lightTheme
+        }
+      : {
+          darkTheme
+        })
   }
-  [data-theme="dark"] {
-    body {
-      background-color: #010104;
-      color: #EAE9FC;
-    }
-  }
-`;
+})
 
-export default theme;
