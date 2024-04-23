@@ -2,6 +2,8 @@
 
 Welcome to GVM-UI - a Next.js template for building modern and responsive user interfaces with ease.
 
+<img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" /> <img src="https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white" alt="MUI" /> <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+
 ## Features 🌟
 
 - **Next.js Framework**: Built on top of the Next.js framework, GVM-UI leverages the power of React for fast and efficient UI development.
