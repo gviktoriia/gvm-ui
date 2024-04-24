@@ -1,11 +1,13 @@
 "use client";
 
-import { CssBaseline, PaletteMode, Switch } from "@mui/material";
+import { CssBaseline, PaletteMode } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { useMemo, useState } from "react";
 import { getDesignTokens } from "../../theme/theme";
 import Head from "next/head";
 import ModeSwitcher from "./components/ModeSwitcher";
+import Navbar from "./components/Navbar";
+import Home from "./page";
 
 export default function RootLayout({
   children,
@@ -31,12 +33,12 @@ export default function RootLayout({
         }}
       >
         <ThemeProvider theme={theme}>
-          {children}
           <CssBaseline />
-          <ModeSwitcher
+          <Navbar
             mode={mode}
             toggle={() => setMode(mode === "light" ? "dark" : "light")}
           />
+          {children}
         </ThemeProvider>
       </body>
     </html>

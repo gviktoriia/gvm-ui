@@ -2,8 +2,6 @@
 
 import { Switch } from "@mui/material";
 
-//  TODO: Fix the switch-track background color
-
 interface ModeSwitcherProps {
   mode: string;
   toggle: () => void;
@@ -19,9 +17,7 @@ const ModeSwitcher: React.FC<ModeSwitcherProps> = ({ mode, toggle }) => {
         marginRight: "auto",
         width: 62,
         height: 34,
-        padding: 7,
         "& .MuiSwitch-switchBase": {
-          margin: 1,
           padding: 0,
           transform: "translateX(6px)",
           "&.Mui-checked": {
