@@ -139,7 +139,12 @@ const Navbar = ({ mode, toggle }: NavbarProps) => {
               {pages.map((page) => (
                 <Button
                   key={page}
-                  sx={{ my: 2, color: "text", display: "block" }}
+                  sx={{
+                    my: 2,
+                    color: "text",
+                    display: "block",
+                    textTransform: "none",
+                  }}
                 >
                   {page}
                 </Button>
