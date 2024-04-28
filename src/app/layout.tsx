@@ -5,9 +5,10 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { useMemo, useState } from "react";
 import { getDesignTokens } from "../../theme/theme";
 import Head from "next/head";
-import ModeSwitcher from "./components/ModeSwitcher";
-import Navbar from "./components/Navbar";
+import ModeSwitcher from "./components/Navbar/ModeSwitcher";
+import Navbar from "./components/Navbar/Navbar";
 import Home from "./page";
+import Footer from "./components/MainPage/Footer/Footer";
 
 export default function RootLayout({
   children,
@@ -29,7 +30,8 @@ export default function RootLayout({
       <body
         style={{
           margin: 0,
-          padding: 0,
+          paddingLeft: "5%",
+          paddingRight: "5%",
         }}
       >
         <ThemeProvider theme={theme}>
@@ -39,6 +41,7 @@ export default function RootLayout({
             toggle={() => setMode(mode === "light" ? "dark" : "light")}
           />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
