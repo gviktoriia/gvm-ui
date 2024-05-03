@@ -1,8 +1,8 @@
 import React from "react";
-import CTAButton from "../../buttons/GradientArrowButton";
-import SecondaryButton from "../../buttons/StartIconButton";
 import StandardLayout from "../../layouts/StandardLayout";
 import { Grid } from "@mui/material";
+import GradientArrowButton from "../../buttons/GradientArrowButton";
+import StartIconButton from "../../buttons/StartIconButton";
 
 const Hero = () => {
   return (
@@ -14,8 +14,8 @@ const Hero = () => {
       align="center"
       content={
         <Grid container justifyContent="center" gap={2}>
-          <CTAButton title="Get started" />
-          <SecondaryButton title="Read the docs" />
+          <GradientArrowButton title="Get started" link="/signup" />
+          <StartIconButton title="Read the docs" />
         </Grid>
       }
     />

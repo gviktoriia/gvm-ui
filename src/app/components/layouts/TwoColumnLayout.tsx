@@ -4,7 +4,7 @@ import HeaderTypography from "../headers/HeaderTypography";
 import { StandardLayoutProps } from "./StandardLayout";
 
 export interface TwoColumnLayoutProps extends StandardLayoutProps {
-  picture: ReactElement;
+  picture?: ReactElement;
 }
 
 const TwoColumnLayout: React.FC<TwoColumnLayoutProps> = ({

@@ -24,7 +24,13 @@ interface NavbarProps {
   toggle: () => void;
 }
 
-const pages = ["About", "Products", "Pricing", "Tutorials", "Blog", "Contact"];
+const pages = [
+  "About",
+  "Pricing",
+  "Blog",
+  "Contact",
+  "Documentation",
+];
 const drawerWidth = 240;
 
 const Navbar = ({ mode, toggle }: NavbarProps) => {
@@ -35,18 +41,14 @@ const Navbar = ({ mode, toggle }: NavbarProps) => {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        GVM-UI
-      </Typography>
-      <Divider
-        sx={{
-          backgroundColor: "divider",
-        }}
-      />
       <List>
         {pages.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemButton
+              sx={{ textAlign: "center" }}
+              component="a"
+              href={"/" + item.toLowerCase()}
+            >
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
@@ -139,6 +141,8 @@ const Navbar = ({ mode, toggle }: NavbarProps) => {
               {pages.map((page) => (
                 <Button
                   key={page}
+                  component="a"
+                  href={"/" + page.toLowerCase()}
                   sx={{
                     my: 2,
                     color: "text",

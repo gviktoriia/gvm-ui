@@ -8,6 +8,9 @@ import GridViewIcon from "@mui/icons-material/GridView";
 import SettingsSuggestIcon from "@mui/icons-material/SettingsSuggest";
 import BoltIcon from "@mui/icons-material/Bolt";
 import ChecklistRtlIcon from "@mui/icons-material/ChecklistRtl";
+import GrassIcon from "@mui/icons-material/Grass";
+import OfflineBoltIcon from "@mui/icons-material/OfflineBolt";
+import GpsNotFixedIcon from "@mui/icons-material/GpsNotFixed";
 
 interface Feature {
   title: string;
@@ -90,5 +93,26 @@ export const SECURITY_FEATURES: Feature[] = [
     description:
       "Quickly apply filters to refine your issues lists and create custom views.",
     isButton: false,
+  },
+];
+
+export const TEAM_FEATURES: Feature[] = [
+  {
+    title: "Passionate",
+    description:
+      "You are passionate about digital products of any kind and are a builder at heart.",
+    icon: <GrassIcon />,
+  },
+  {
+    title: "Energetic",
+    description:
+      "You are passionate about digital products of any kind and are a builder at heart.",
+    icon: <OfflineBoltIcon />,
+  },
+  {
+    title: "Achiever",
+    description:
+      "You are passionate about digital products of any kind and are a builder at heart",
+    icon: <GpsNotFixedIcon />,
   },
 ];

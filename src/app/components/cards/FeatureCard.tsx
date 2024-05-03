@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, Typography } from "@mui/material";
 import { ReactElement } from "react";
 
-interface FeatureCardProps {
+export interface FeatureCardProps {
   title: string;
   description?: string;
   icon?: ReactElement;

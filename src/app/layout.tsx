@@ -5,10 +5,8 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { useMemo, useState } from "react";
 import { getDesignTokens } from "../../theme/theme";
 import Head from "next/head";
-import ModeSwitcher from "./components/Navbar/ModeSwitcher";
 import Navbar from "./components/Navbar/Navbar";
-import Home from "./page";
-import Footer from "./components/MainPage/Footer/Footer";
+import Footer from "./components/Footer/Footer";
 
 export default function RootLayout({
   children,

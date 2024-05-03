@@ -4,6 +4,7 @@ import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArro
 
 interface CTAButtonProps {
   title?: string;
+  link?: string;
   width?: string;
   height?: string;
   bgImage?: string;
@@ -11,6 +12,7 @@ interface CTAButtonProps {
 
 const GradientArrowButton = ({
   title,
+  link,
   width,
   height,
   bgImage,
@@ -18,6 +20,7 @@ const GradientArrowButton = ({
   return (
     <Button
       endIcon={<KeyboardDoubleArrowRightIcon />}
+      href={link}
       sx={{
         borderRadius: "40px",
         backgroundImage:
