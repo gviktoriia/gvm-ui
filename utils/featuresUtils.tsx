@@ -11,6 +11,8 @@ import ChecklistRtlIcon from "@mui/icons-material/ChecklistRtl";
 import GrassIcon from "@mui/icons-material/Grass";
 import OfflineBoltIcon from "@mui/icons-material/OfflineBolt";
 import GpsNotFixedIcon from "@mui/icons-material/GpsNotFixed";
+import { GitHub } from "@mui/icons-material";
+import Image from "next/image";
 
 interface Feature {
   title: string;
@@ -114,5 +116,40 @@ export const TEAM_FEATURES: Feature[] = [
     description:
       "You are passionate about digital products of any kind and are a builder at heart",
     icon: <GpsNotFixedIcon />,
+  },
+];
+
+export const INTEGRATION_FEATURES: Feature[] = [
+  {
+    title: "GitHub",
+    description:
+      "Configure the GitHub integration by authenticating and selecting which repos to connect to GVM-UI.",
+    icon: <GitHub />,
+  },
+  {
+    title: "TypeScript",
+    description:
+      "Configure the TypeScript integration by authenticating and selecting which repos to connect to GVM-UI.",
+    icon: (
+      <Image
+        src="https://www.svgrepo.com/show/306891/typescript.svg"
+        alt="TypeScript"
+        width={24}
+        height={24}
+      />
+    ),
+  },
+  {
+    title: "Material UI",
+    description:
+      "Configure the Material UI integration by authenticating and selecting which repos to connect to GVM-UI.",
+    icon: (
+      <Image
+        src="https://icons.veryicon.com/png/o/object/material-design-icons-1/material-ui.png"
+        alt="MUI"
+        width={24}
+        height={24}
+      />
+    ),
   },
 ];

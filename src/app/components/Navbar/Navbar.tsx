@@ -24,13 +24,7 @@ interface NavbarProps {
   toggle: () => void;
 }
 
-const pages = [
-  "About",
-  "Pricing",
-  "Blog",
-  "Contact",
-  "Documentation",
-];
+const pages = ["About", "Pricing", "Integration", "Blog", "Documentation"];
 const drawerWidth = 240;
 
 const Navbar = ({ mode, toggle }: NavbarProps) => {
