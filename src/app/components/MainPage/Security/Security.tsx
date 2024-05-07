@@ -3,7 +3,7 @@ import TwoColumnLayout from "../../layouts/TwoColumnLayout";
 import { AUTH_FEATURES } from "../../../../../utils/featuresUtils";
 import { Grid } from "@mui/material";
 import FeatureCard from "../../cards/FeatureCard";
-import { LineChart } from "@mui/x-charts/LineChart";
+import { LineChart } from "@mui/x-charts";
 
 const Security = () => {
   return (

@@ -1,17 +1,20 @@
 import { ReactElement } from "react";
-import ListIcon from "@mui/icons-material/List";
-import FingerprintIcon from "@mui/icons-material/Fingerprint";
-import SettingsAccessibilityIcon from "@mui/icons-material/SettingsAccessibility";
-import IntegrationInstructionsIcon from "@mui/icons-material/IntegrationInstructions";
-import PhonelinkIcon from "@mui/icons-material/Phonelink";
-import GridViewIcon from "@mui/icons-material/GridView";
-import SettingsSuggestIcon from "@mui/icons-material/SettingsSuggest";
-import BoltIcon from "@mui/icons-material/Bolt";
-import ChecklistRtlIcon from "@mui/icons-material/ChecklistRtl";
-import GrassIcon from "@mui/icons-material/Grass";
-import OfflineBoltIcon from "@mui/icons-material/OfflineBolt";
-import GpsNotFixedIcon from "@mui/icons-material/GpsNotFixed";
-import { GitHub } from "@mui/icons-material";
+
+import {
+  List,
+  Fingerprint,
+  SettingsAccessibility,
+  IntegrationInstructions,
+  GitHub,
+  GpsNotFixed,
+  OfflineBolt,
+  Grass,
+  ChecklistRtl,
+  Bolt,
+  SettingsSuggest,
+  GridView,
+  Phonelink,
+} from "@mui/icons-material";
 import Image from "next/image";
 
 interface Feature {
@@ -25,15 +28,15 @@ interface Feature {
 export const AUTH_FEATURES: Feature[] = [
   {
     title: "Simplify your security",
-    icon: <ListIcon />,
+    icon: <List />,
   },
   {
     title: "Customer identity",
-    icon: <FingerprintIcon />,
+    icon: <Fingerprint />,
   },
   {
     title: "Adaptable authentication",
-    icon: <SettingsAccessibilityIcon />,
+    icon: <SettingsAccessibility />,
   },
 ];
 
@@ -42,37 +45,37 @@ export const FEATURES: Feature[] = [
     title: "Next.js Integration",
     description:
       "Built on the Next.js framework, GVM-UI harnesses the capabilities of React for rapid UI development.",
-    icon: <IntegrationInstructionsIcon />,
+    icon: <IntegrationInstructions />,
   },
   {
     title: "Responsive Design",
     description:
       "Ensure your applications look and feel great on any device with GVM-UI's responsive design principles.",
-    icon: <PhonelinkIcon />,
+    icon: <Phonelink />,
   },
   {
     title: "Component-based Architerture",
     description:
       "Our methodology follows a component-based architecture, allowing developers to create reusable UI components that enhance maintainability and scalability.",
-    icon: <GridViewIcon />,
+    icon: <GridView />,
   },
   {
     title: "Customizable Styling",
     description:
       "Tailor your UI effortlessly with CSS modules and styled components included in the GVM-UI template.",
-    icon: <SettingsSuggestIcon />,
+    icon: <SettingsSuggest />,
   },
   {
     title: "Optimized Performance",
     description:
       "Follow best practices for performance optimization, including code splitting and server-side rendering.",
-    icon: <BoltIcon />,
+    icon: <Bolt />,
   },
   {
     title: "Ready-to-Use Components",
     description:
       "Access a rich library of reusable UI components to kickstart your project development.",
-    icon: <ChecklistRtlIcon />,
+    icon: <ChecklistRtl />,
   },
 ];
 
@@ -103,19 +106,19 @@ export const TEAM_FEATURES: Feature[] = [
     title: "Passionate",
     description:
       "You are passionate about digital products of any kind and are a builder at heart.",
-    icon: <GrassIcon />,
+    icon: <Grass />,
   },
   {
     title: "Energetic",
     description:
       "You are passionate about digital products of any kind and are a builder at heart.",
-    icon: <OfflineBoltIcon />,
+    icon: <OfflineBolt />,
   },
   {
     title: "Achiever",
     description:
       "You are passionate about digital products of any kind and are a builder at heart",
-    icon: <GpsNotFixedIcon />,
+    icon: <GpsNotFixed />,
   },
 ];
 

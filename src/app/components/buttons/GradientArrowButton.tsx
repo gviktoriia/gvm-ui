@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import React from "react";
-import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
+import { KeyboardDoubleArrowRight } from "@mui/icons-material";
 
 export interface CTAButtonProps {
   title?: string;
@@ -19,7 +19,7 @@ const GradientArrowButton = ({
 }: CTAButtonProps) => {
   return (
     <Button
-      endIcon={<KeyboardDoubleArrowRightIcon />}
+      endIcon={<KeyboardDoubleArrowRight />}
       href={link}
       sx={{
         borderRadius: "40px",

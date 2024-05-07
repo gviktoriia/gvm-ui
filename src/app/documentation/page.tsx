@@ -22,7 +22,7 @@ const page = () => {
               </Typography>
               <Typography>{rule.description}</Typography>
             </Grid>
-          ))}{" "}
+          ))}
         </Grid>
       }
     />

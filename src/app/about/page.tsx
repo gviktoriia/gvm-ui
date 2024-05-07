@@ -1,5 +1,4 @@
 import React from "react";
-import HeaderTypography from "../components/headers/HeaderTypography";
 import StandardLayout from "../components/layouts/StandardLayout";
 import GradientArrowButton from "../components/buttons/GradientArrowButton";
 import TwoColumnLayout from "../components/layouts/TwoColumnLayout";
