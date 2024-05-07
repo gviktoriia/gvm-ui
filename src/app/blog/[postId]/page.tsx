@@ -1,5 +1,5 @@
 "use client";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { POSTS } from "../../../../utils/postUtils";
@@ -64,7 +64,7 @@ const PostDetail = () => {
           <Box
             display="flex"
             flexDirection={{ lg: "row", xs: "column" }}
-            gap={5}
+            gap={2}
           >
             <Typography
               sx={{
@@ -74,12 +74,18 @@ const PostDetail = () => {
             >
               {post.description}
             </Typography>
-            <Box textAlign="center" justifyContent="center">
+            <Box
+              position="relative"
+              textAlign="center"
+              justifyContent="center"
+              minWidth="300px"
+              height="300px"
+            >
               <Image
                 src={post.image}
                 alt={post.title}
-                width={500}
-                height={400}
+                fill={true}
+                style={{ objectFit: "contain" }}
               />
             </Box>
           </Box>
