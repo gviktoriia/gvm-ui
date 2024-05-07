@@ -7,6 +7,7 @@ import { getDesignTokens } from "../../theme/theme";
 import Head from "next/head";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import { Providers } from "./components/Auth/Provider";
 
 export default function RootLayout({
   children,
@@ -38,7 +39,7 @@ export default function RootLayout({
             mode={mode}
             toggle={() => setMode(mode === "light" ? "dark" : "light")}
           />
-          {children}
+          <Providers>{children}</Providers>
           <Footer />
         </ThemeProvider>
       </body>

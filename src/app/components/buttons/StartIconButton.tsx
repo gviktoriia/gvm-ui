@@ -1,15 +1,13 @@
 import { Button } from "@mui/material";
 import React from "react";
 import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
+import { CTAButtonProps } from "./GradientArrowButton";
 
-interface SecondaryButtonProps {
-  title: string;
-}
-
-const StartIconButton = ({ title }: SecondaryButtonProps) => {
+const StartIconButton = ({ title, link }: CTAButtonProps) => {
   return (
     <Button
       startIcon={<AutoFixHighIcon />}
+      href={link}
       sx={{
         borderRadius: "40px",
         backgroundColor: "#E5E4E2",

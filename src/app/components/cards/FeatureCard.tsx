@@ -20,6 +20,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         width: { xs: "240px", sm: "300px", md: "360px", lg: "420px" },
         height: height,
         textAlign: "left",
+        backgroundColor: "transparent",
       }}
     >
       <CardHeader

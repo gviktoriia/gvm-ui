@@ -18,8 +18,7 @@ export const lightTheme = createTheme({
       secondary: '#1c1b1e',
     },
     background: {
-      default: '#fffbff',
-      paper: '#fffbff',
+      default: 'linear-gradient(90deg, #67a2f0, #fff7bd)',
     },
     error: {
       main: '#ba1b1b',
@@ -27,10 +26,6 @@ export const lightTheme = createTheme({
     },
     success: {
       main: '#006e10',
-      contrastText: '#ffffff',
-    },
-    info: {
-      main: '#0062a2',
       contrastText: '#ffffff',
     },
     warning: {
@@ -58,8 +53,7 @@ export const darkTheme = createTheme({
       secondary: '#e6e1e6',
     },
     background: {
-      default: '#1c1b1e',
-      paper: '#1c1b1e',
+      default: 'linear-gradient(90deg, #2a2f30, #d6c82f)',
     },
     error: {
       main: '#ffb4a9',
@@ -68,10 +62,6 @@ export const darkTheme = createTheme({
     success: {
       main: '#79dd72',
       contrastText: '#003a03',
-    },
-    info: {
-      main: '#99cbff',
-      contrastText: '#003257',
     },
     warning: {
       main: '#cace09',
@@ -90,7 +80,7 @@ export const getDesignTokens = (mode: PaletteMode) => ({
         }
       : {
           darkTheme
-        })
+        }),
   }
 })
 

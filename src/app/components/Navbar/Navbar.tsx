@@ -10,7 +10,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import {
-  Divider,
   Drawer,
   List,
   ListItem,
@@ -18,6 +17,7 @@ import {
   ListItemText,
 } from "@mui/material";
 import ModeSwitcher from "./ModeSwitcher";
+import { Auth } from "../Auth/Auth";
 
 interface NavbarProps {
   mode: string;
@@ -148,9 +148,11 @@ const Navbar = ({ mode, toggle }: NavbarProps) => {
                 </Button>
               ))}
             </Box>
-            <Box sx={{ flexGrow: 0 }}>
+            <Auth />
+
+            {/* <Box sx={{ flexGrow: 0 }}>
               <ModeSwitcher mode={mode} toggle={toggle} />
-            </Box>
+            </Box> */}
           </Toolbar>
         </Container>
       </AppBar>

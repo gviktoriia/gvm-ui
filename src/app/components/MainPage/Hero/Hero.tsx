@@ -14,8 +14,8 @@ const Hero = () => {
       align="center"
       content={
         <Grid container justifyContent="center" gap={2}>
-          <GradientArrowButton title="Get started" link="/signup" />
-          <StartIconButton title="Read the docs" />
+          <GradientArrowButton title="Get started" link="/login" />
+          <StartIconButton title="Read the docs" link="/documentation" />
         </Grid>
       }
     />

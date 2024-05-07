@@ -16,7 +16,11 @@ const StaffCard: React.FC<StaffCardProps> = ({
   link,
 }) => {
   return (
-    <Card>
+    <Card
+      sx={{
+        backgroundColor: "rgb(255, 255, 255, 80%)",
+      }}
+    >
       <CardHeader
         avatar={
           <Avatar

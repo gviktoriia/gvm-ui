@@ -23,13 +23,14 @@ const page = () => {
         subtitle="We have transformed product development, making it faster, simpler... better! That's why in just three years we now help more developers build projects than anyone else."
         content={
           <TwoColumnLayout
-            title="We came together over a shared excitement about building a product that could solve our own problem of where our next favourite hack is coming from. But also a product that helps everyone thrive in this market: from founders and engineers to companies and investors. GVM-UI is a product that connects people around the topics and ideas that fascinate them. The idea that we can use technology to take our experience, as security lovers, to a new dimension and leave the computer industry in better shape while we're at it. You can dive into the atoms that make up a product, share the moments that move you and discuss the ideas you find compelling. We want to create a ground for discussion and bring knowledge together, while making it more accessible and easier to grasp."
+            title="We came together over a shared excitement about building a product that could solve our own problem of where our next favourite hack is coming from. But also a product that helps everyone thrive in this market: from founders and engineers to companies and investors. 
+            GVM-UI is a product that connects people around the topics and ideas that fascinate them. The idea that we can use technology to take our experience, as security lovers, to a new dimension and leave the computer industry in better shape while we're at it. You can dive into the atoms that make up a product, share the moments that move you and discuss the ideas you find compelling."
             title_font_size={{ xs: "14px", md: "14px", lg: "16px" }}
             picture={
               <Image
-                src="https://img.freepik.com/free-photo/cute-ai-generated-cartoon-bunny_23-2150288870.jpg?size=338&ext=jpg&ga=GA1.1.553209589.1714694400&semt=ais"
-                width={300}
-                height={300}
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                width={380}
+                height={240}
                 alt="Cutie"
               />
             }

@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import React from "react";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 
-interface CTAButtonProps {
+export interface CTAButtonProps {
   title?: string;
   link?: string;
   width?: string;

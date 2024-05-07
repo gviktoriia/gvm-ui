@@ -8,7 +8,7 @@ const CTASection = () => {
       small_title="The security first platform"
       title="Take control of your business"
       subtitle="All the lorem ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet."
-      content={<GradientArrowButton title="Get Started" />}
+      content={<GradientArrowButton title="Get Started" link="/signup" />}
     />
   );
 };

@@ -22,7 +22,7 @@ const SocialAuth = () => {
         <IconButton aria-label="delete">
           <X />
         </IconButton>
-        <IconButton aria-label="delete">
+        <IconButton aria-label="delete" component="a" href="/api/auth/signin">
           <GitHub />
         </IconButton>
       </Box>
