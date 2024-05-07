@@ -34,7 +34,7 @@ const page = () => {
             textAlign="center"
             justifyContent="center"
           >
-            <Typography>Don't have an account?</Typography>
+            <Typography>Dont have an account?</Typography>
             <Typography component="a" href="/signup">
               Sign up
             </Typography>

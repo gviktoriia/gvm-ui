@@ -1,6 +1,5 @@
 "use client";
 
-import IconsSlider from "./components/MainPage/Hero/IconsSlider";
 import Hero from "./components/MainPage/Hero/Hero";
 import About from "./components/MainPage/About/About";
 import Security from "./components/MainPage/Security/Security";
@@ -12,7 +11,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      {/* <IconsSlider /> */}
       <Security />
       <Advertisement />
       <About />

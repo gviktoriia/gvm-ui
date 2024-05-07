@@ -22,17 +22,12 @@ const IconsSlider = () => {
     >
       {partners_list.map((icon, index) => (
         <Box
+          key={index}
           sx={{
             width: { xs: "50px", sm: "100px", md: "200px" },
           }}
         >
-          <Image
-            key={index}
-            src={icon.logo}
-            width={200}
-            height={140}
-            alt={icon.title}
-          />
+          <Image src={icon.logo} width={200} height={140} alt={icon.title} />
         </Box>
       ))}
     </Box>

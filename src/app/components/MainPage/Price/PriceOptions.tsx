@@ -19,7 +19,7 @@ const PriceOptions: React.FC<PriceOptionsProps> = ({ title, list }) => {
         {title}
       </Typography>
       {list.map((option, index) => (
-        <Box display="flex" flexDirection="row">
+        <Box display="flex" flexDirection="row" key={index}>
           <DoneIcon />
           <Typography
             sx={{
