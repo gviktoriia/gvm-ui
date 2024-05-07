@@ -8,15 +8,22 @@ export function Auth() {
   return (
     <Box>
       {status === "authenticated" && (
-        <Box display="flex" flexDirection="row" gap={2}>
+        <Box
+          display="flex"
+          textAlign="center"
+          flexDirection={{ lg: "row", md: "row", sm: "column" }}
+          gap={2}
+        >
           <Typography
             sx={{
-              color: "black",
+              color: "text.primary",
             }}
           >
-            Signed in as {session.user && session.user.name}
+            {session.user && session.user.name}
           </Typography>
-          <BorderedButton title="Logout" link="/api/auth/signout" />
+          <Box textAlign="center" margin="auto">
+            <BorderedButton title="Logout" link="/api/auth/signout" />
+          </Box>
         </Box>
       )}
 
