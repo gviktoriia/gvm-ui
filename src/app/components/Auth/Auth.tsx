@@ -1,7 +1,5 @@
-import { getServerSession } from "next-auth/next";
 import { Box, Typography } from "@mui/material";
 import BorderedButton from "../buttons/BorderedButton";
-import { authOptions } from "../../../../utils/authOptions";
 import { useSession } from "next-auth/react";
 
 export function Auth() {

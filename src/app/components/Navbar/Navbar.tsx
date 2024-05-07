@@ -47,6 +47,7 @@ const Navbar = ({ mode, toggle }: NavbarProps) => {
             </ListItemButton>
           </ListItem>
         ))}
+        <Auth />
       </List>
     </Box>
   );
@@ -148,8 +149,9 @@ const Navbar = ({ mode, toggle }: NavbarProps) => {
                 </Button>
               ))}
             </Box>
-            <Auth />
-
+            <Box sx={{ flexGrow: 0, display: { xs: "none", md: "flex" } }}>
+              <Auth />
+            </Box>
             <Box sx={{ flexGrow: 0 }}>
               <ModeSwitcher mode={mode} toggle={toggle} />
             </Box>

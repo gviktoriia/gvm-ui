@@ -1,5 +1,5 @@
 "use client";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { POSTS } from "../../../../utils/postUtils";
