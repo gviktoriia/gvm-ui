@@ -150,9 +150,9 @@ const Navbar = ({ mode, toggle }: NavbarProps) => {
             </Box>
             <Auth />
 
-            {/* <Box sx={{ flexGrow: 0 }}>
+            <Box sx={{ flexGrow: 0 }}>
               <ModeSwitcher mode={mode} toggle={toggle} />
-            </Box> */}
+            </Box>
           </Toolbar>
         </Container>
       </AppBar>

@@ -2,13 +2,14 @@ import { getServerSession } from "next-auth/next";
 import { Box, Typography } from "@mui/material";
 import BorderedButton from "../buttons/BorderedButton";
 import { authOptions } from "../../../../utils/authOptions";
+import { useSession } from "next-auth/react";
 
-export async function Auth() {
-  const session = await getServerSession(authOptions);
+export function Auth() {
+  const { data: session, status, update } = useSession();
 
   return (
     <Box>
-      {session && (
+      {status === "authenticated" && (
         <Box display="flex" flexDirection="row" gap={2}>
           <Typography
             sx={{

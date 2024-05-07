@@ -35,11 +35,14 @@ export default function RootLayout({
       >
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Navbar
-            mode={mode}
-            toggle={() => setMode(mode === "light" ? "dark" : "light")}
-          />
-          <Providers>{children}</Providers>
+
+          <Providers>
+            <Navbar
+              mode={mode}
+              toggle={() => setMode(mode === "light" ? "dark" : "light")}
+            />
+            {children}
+          </Providers>
           <Footer />
         </ThemeProvider>
       </body>
