@@ -6,14 +6,14 @@ export interface HeaderTypographyProps {
   title: string;
   subtitle?: string;
   title_font_size?: {
-    lg: string;
-    md: string;
-    xs: string;
+    lg?: string;
+    md?: string;
+    xs?: string;
   };
   subtitle_font_size?: {
-    lg: string;
-    md: string;
-    xs: string;
+    lg?: string;
+    md?: string;
+    xs?: string;
   };
   maxWidth?: string;
   align?: "left" | "center" | "right";

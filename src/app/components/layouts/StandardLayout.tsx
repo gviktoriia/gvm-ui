@@ -5,7 +5,7 @@ import HeaderTypography, {
 } from "../headers/HeaderTypography";
 
 export interface StandardLayoutProps extends HeaderTypographyProps {
-  content: ReactNode;
+  content?: ReactNode;
 }
 
 const StandardLayout: React.FC<StandardLayoutProps> = ({
@@ -13,9 +13,10 @@ const StandardLayout: React.FC<StandardLayoutProps> = ({
   title,
   subtitle,
   title_font_size,
+  subtitle_font_size,
   maxWidth,
   align,
-  content,
+  content = null,
 }) => {
   return (
     <Box
@@ -35,6 +36,7 @@ const StandardLayout: React.FC<StandardLayoutProps> = ({
         title={title}
         subtitle={subtitle}
         title_font_size={title_font_size}
+        subtitle_font_size={subtitle_font_size}
         maxWidth={maxWidth}
         align={align}
       />
