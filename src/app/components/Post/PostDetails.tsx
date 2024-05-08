@@ -13,7 +13,7 @@ interface PostWithAdmin extends Post {
 }
 
 interface PostDetailsProps {
-  posts: PostWithAdmin[]; // Use PostWithAdmin instead of Post
+  posts: PostWithAdmin[]; 
 }
 
 const PostDetails: React.FC<PostDetailsProps> = ({ posts }) => {
