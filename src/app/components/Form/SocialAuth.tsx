@@ -19,9 +19,9 @@ const SocialAuth = () => {
         justifyContent="center"
         gap={5}
       >
-        <IconButton aria-label="delete">
+        {/* <IconButton aria-label="delete">
           <X />
-        </IconButton>
+        </IconButton> */}
         <IconButton aria-label="delete" component="a" href="/api/auth/signin">
           <GitHub />
         </IconButton>

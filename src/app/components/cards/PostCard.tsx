@@ -2,7 +2,7 @@ import { Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
-interface PostCardProps {
+export interface PostCardProps {
   title: string;
   date: Date;
   image: string;
@@ -23,6 +23,11 @@ const PostCard: React.FC<PostCardProps> = ({
     day: "numeric",
   });
 
+  const MAX_TITLE_LENGTH = 54;
+  let cardTitle = title;
+  if (title.length > MAX_TITLE_LENGTH) {
+    cardTitle = title.substring(0, MAX_TITLE_LENGTH) + "...";
+  }
   const cardDescription = description.substring(0, 40) + "...";
   return (
     <Grid
@@ -56,9 +61,10 @@ const PostCard: React.FC<PostCardProps> = ({
         sx={{
           fontWeight: "700",
           fontSize: "20px",
+          maxWidth: "300px",
         }}
       >
-        {title}
+        {cardTitle}
       </Typography>
       <Typography
         sx={{

@@ -1,13 +1,18 @@
+"use client";
 import { Box, Grid } from "@mui/material";
 import React from "react";
 import PostCard from "../cards/PostCard";
-import { POSTS } from "../../../../utils/postUtils";
 import { useSession } from "next-auth/react";
 import FilledButton from "../buttons/FilledButton";
+import { POSTS } from "../../../../utils/postUtils";
+import { Post } from "@prisma/client";
 
-const Blog = () => {
-  const { data: session, status, update } = useSession();
+interface BlogData {
+  posts: Post[];
+}
 
+const Blog: React.FC<BlogData> = ({ posts }) => {
+  const { status } = useSession();
   return (
     <Box>
       {status === "authenticated" && (
@@ -21,7 +26,7 @@ const Blog = () => {
         </Box>
       )}
       <Grid container textAlign="center" justifyContent="center">
-        {POSTS.map((post) => (
+        {posts.map((post) => (
           <PostCard
             key={post.id}
             title={post.title}

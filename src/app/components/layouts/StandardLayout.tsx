@@ -1,11 +1,12 @@
 import { Box } from "@mui/material";
-import React, { ReactNode } from "react";
+import React from "react";
 import HeaderTypography, {
   HeaderTypographyProps,
 } from "../headers/HeaderTypography";
+import Blog from "../Blog/Blog";
 
 export interface StandardLayoutProps extends HeaderTypographyProps {
-  content?: ReactNode;
+  content?: React.ReactNode;
 }
 
 const StandardLayout: React.FC<StandardLayoutProps> = ({
