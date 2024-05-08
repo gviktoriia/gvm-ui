@@ -2,9 +2,20 @@ import { Button } from "@mui/material";
 import React from "react";
 import { CTAButtonProps } from "./GradientArrowButton";
 
-const FilledButton: React.FC<CTAButtonProps> = ({ title, link }) => {
+interface FilledButtonProps extends CTAButtonProps {
+  onClick?: () => void;
+}
+
+const FilledButton: React.FC<FilledButtonProps> = ({
+  title,
+  link,
+  onClick,
+}) => {
   return (
     <Button
+      component="a"
+      href={link}
+      onClick={onClick}
       sx={{
         backgroundColor: "text.primary",
         color: "background.default",
@@ -12,6 +23,9 @@ const FilledButton: React.FC<CTAButtonProps> = ({ title, link }) => {
         height: "30px",
         borderRadius: "20px",
         textTransform: "none",
+        "&:hover": {
+          backgroundColor: "text.secondary",
+        },
       }}
     >
       {title}

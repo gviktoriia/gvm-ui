@@ -1,16 +1,23 @@
 import { TextField } from "@mui/material";
 import React from "react";
 
-interface SignupFormProps {
+export interface StandardFormProps {
   title: string;
   example?: string;
+  name?: string;
 }
 
-const SignupForm: React.FC<SignupFormProps> = ({ title, example }) => {
+const StandardForm: React.FC<StandardFormProps> = ({
+  title,
+  example,
+  name,
+}) => {
   return (
     <TextField
       fullWidth
       label={title}
+      name={name}
+      type="text"
       id="outlined-start-adornment"
       sx={{ m: 1, width: "100%" }}
       InputProps={{
@@ -20,4 +27,4 @@ const SignupForm: React.FC<SignupFormProps> = ({ title, example }) => {
   );
 };
 
-export default SignupForm;
+export default StandardForm;

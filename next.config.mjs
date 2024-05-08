@@ -5,6 +5,7 @@ const nextConfig = {
   },
   experimental: {
     taint: true,
+    serverActions: true,
   },
 };
 

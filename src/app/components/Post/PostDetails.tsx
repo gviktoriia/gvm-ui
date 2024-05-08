@@ -5,6 +5,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import { Post } from "@prisma/client";
 import { usePathname } from "next/navigation";
+import EditIcons from "../cards/EditIcons";
 
 interface PostWithAdmin extends Post {
   admin: {
@@ -13,7 +14,7 @@ interface PostWithAdmin extends Post {
 }
 
 interface PostDetailsProps {
-  posts: PostWithAdmin[]; 
+  posts: PostWithAdmin[];
 }
 
 const PostDetails: React.FC<PostDetailsProps> = ({ posts }) => {
@@ -75,14 +76,17 @@ const PostDetails: React.FC<PostDetailsProps> = ({ posts }) => {
             flexDirection={{ lg: "row", xs: "column" }}
             gap={2}
           >
-            <Typography
-              sx={{
-                fontSize: "20px",
-                textAlign: "center",
-              }}
-            >
-              {post.description}
-            </Typography>
+            <Box display="flex" flexDirection="column">
+              <Typography
+                sx={{
+                  fontSize: "20px",
+                  textAlign: "center",
+                }}
+              >
+                {post.description}
+              </Typography>
+              <EditIcons />
+            </Box>
             <Box
               position="relative"
               textAlign="center"

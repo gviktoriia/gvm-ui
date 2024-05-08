@@ -1,10 +1,11 @@
 import React from "react";
 import StandardLayout from "../components/layouts/StandardLayout";
 import { Box, Grid, Typography } from "@mui/material";
-import SignupForm from "../components/Form/SignupForm";
-import PasswordForm from "../components/Form/PasswordForm";
+import SignupForm from "../components/forms/StandardForm";
+import PasswordForm from "../components/forms/PasswordForm";
 import GradientArrowButton from "../components/buttons/GradientArrowButton";
-import SocialAuth from "../components/Form/SocialAuth";
+import SocialAuth from "../components/forms/SocialAuth";
+import StandardForm from "../components/forms/StandardForm";
 
 const page = () => {
   return (
@@ -18,7 +19,7 @@ const page = () => {
           width={{ xs: "100%", sm: "60%", md: "30%" }}
         >
           <Grid item justifyContent="center" textAlign="center">
-            <SignupForm
+            <StandardForm
               title="Email"
               example="E.g., viktoriiahvozdak@gmail.com"
             />

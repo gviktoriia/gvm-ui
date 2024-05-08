@@ -15,16 +15,14 @@ const Blog: React.FC<BlogData> = ({ posts }) => {
   const { status } = useSession();
   return (
     <Box>
-      {status === "authenticated" && (
-        <Box
-          sx={{
-            width: "100%",
-            textAlign: "center",
-          }}
-        >
-          <FilledButton title="New post" />
-        </Box>
-      )}
+      <Box
+        sx={{
+          width: "100%",
+          textAlign: "center",
+        }}
+      >
+        <FilledButton title="New post" link="/blog/create/" />
+      </Box>
       <Grid container textAlign="center" justifyContent="center">
         {posts.map((post) => (
           <PostCard

@@ -1,6 +1,8 @@
-import { Grid, Typography } from "@mui/material";
+import { Delete, Edit } from "@mui/icons-material";
+import { Box, Grid, IconButton, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
+import EditIcons from "./EditIcons";
 
 export interface PostCardProps {
   title: string;
@@ -74,6 +76,7 @@ const PostCard: React.FC<PostCardProps> = ({
       >
         {cardDescription}
       </Typography>
+      <EditIcons />
     </Grid>
   );
 };
