@@ -5,7 +5,6 @@ import prisma from "../../../lib/prisma";
 
 const page = async () => {
   const posts = await prisma.post.findMany();
-  console.log(posts);
   return (
     <StandardLayout
       title="Our Bloogs & Insights"

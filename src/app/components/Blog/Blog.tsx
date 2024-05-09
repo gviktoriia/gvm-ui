@@ -27,6 +27,7 @@ const Blog: React.FC<BlogData> = ({ posts }) => {
         {posts.map((post) => (
           <PostCard
             key={post.id}
+            id={post.id}
             title={post.title}
             date={post.createdAt}
             image={post.image}

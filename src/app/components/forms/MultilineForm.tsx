@@ -6,12 +6,14 @@ const MultilineForm: React.FC<StandardFormProps> = ({
   title,
   example,
   name,
+  defaultValue,
 }) => {
   return (
     <TextField
       id="outlined-multiline-static"
       label={title}
       name={name}
+      defaultValue={defaultValue}
       multiline
       rows={5}
       sx={{ m: 1, width: "100%" }}

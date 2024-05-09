@@ -34,6 +34,15 @@ const PostDetails: React.FC<PostDetailsProps> = ({ posts }) => {
     month: "long",
     day: "numeric",
   });
+
+  const lastFormattedDate = new Date(post.lastModifiedAt).toLocaleDateString(
+    "en-US",
+    {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }
+  );
   return (
     <StandardLayout
       title={post.title}
@@ -85,7 +94,7 @@ const PostDetails: React.FC<PostDetailsProps> = ({ posts }) => {
               >
                 {post.description}
               </Typography>
-              <EditIcons />
+              <EditIcons postId={post.id} />
             </Box>
             <Box
               position="relative"
@@ -102,6 +111,14 @@ const PostDetails: React.FC<PostDetailsProps> = ({ posts }) => {
               />
             </Box>
           </Box>
+          <Typography
+            sx={{
+              fontSize: "14px",
+              color: "grey",
+            }}
+          >
+            Last modified {lastFormattedDate}
+          </Typography>
         </Grid>
       }
     />

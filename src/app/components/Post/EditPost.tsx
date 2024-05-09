@@ -1,25 +1,45 @@
 "use client";
-
 import React, { useRef, useState } from "react";
-import StandardForm from "../forms/StandardForm";
+import { editPost } from "../../../../actions/post/actions";
 import { Alert, Box, Grid } from "@mui/material";
+import StandardForm from "../forms/StandardForm";
 import MultilineForm from "../forms/MultilineForm";
 import BorderedButton from "../buttons/BorderedButton";
-import { createPost } from "../../../../actions/post/actions";
+import { usePathname } from "next/navigation";
+import { Post } from "@prisma/client";
 import { Check } from "@mui/icons-material";
 
-const CreatePost = () => {
+interface EditPostProps {
+  postsInfo: Post[];
+}
+
+const EditPost: React.FC<EditPostProps> = ({ postsInfo }) => {
   const ref = useRef<HTMLFormElement>(null);
-  const [isPostCreated, setIsPostCreated] = useState<boolean | null>(null);
+  const [isPostUpdated, setIsPostUpdated] = useState<boolean | null>(null);
+
+  const path: string = usePathname();
+  const firstSlashIndex = path.indexOf("/");
+  const secondSlashIndex = path.indexOf("/", firstSlashIndex + 1);
+  const thirdSlashIndex = path.indexOf("/", secondSlashIndex + 2);
+  const routeId: string = path.substring(secondSlashIndex + 1, thirdSlashIndex);
+
+  const filteredPost = postsInfo.filter(
+    (post) => post.id.toString() === routeId
+  );
+
+  if (filteredPost.length === 0) {
+    return <div>Post not found</div>;
+  }
+  const post = filteredPost[0];
 
   const handleSubmit = async (formData: FormData) => {
     try {
       ref.current?.reset();
-      await createPost(formData);
-      setIsPostCreated(true);
+      await editPost(Number(routeId), formData);
+      setIsPostUpdated(true);
     } catch (error) {
-      console.error("Error creating post:", error);
-      setIsPostCreated(false);
+      console.error("Error editing post:", error);
+      setIsPostUpdated(false);
     }
   };
 
@@ -45,16 +65,36 @@ const CreatePost = () => {
         width={{ xs: "100%", sm: "80%", md: "60%" }}
       >
         <Grid item justifyContent="center" textAlign="center">
-          <StandardForm title="Title" name="title" required />
+          <StandardForm
+            title="Title"
+            name="title"
+            required
+            defaultValue={post.title}
+          />
         </Grid>
         <Grid item justifyContent="center" textAlign="center">
-          <StandardForm title="Category" name="category" required />
+          <StandardForm
+            title="Category"
+            name="category"
+            required
+            defaultValue={post.category}
+          />
         </Grid>
         <Grid item justifyContent="center" textAlign="center">
-          <MultilineForm title="Description" name="description" required />
+          <MultilineForm
+            title="Description"
+            name="description"
+            required
+            defaultValue={post.description}
+          />
         </Grid>
         <Grid item justifyContent="center" textAlign="center">
-          <StandardForm title="Image link" name="image" required />
+          <StandardForm
+            title="Image link"
+            name="image"
+            required
+            defaultValue={post.image}
+          />
         </Grid>
         <Box display="flex" textAlign="center" justifyContent="center" gap={3}>
           <button
@@ -67,17 +107,17 @@ const CreatePost = () => {
               textTransform: "none",
             }}
           >
-            Create
+            Edit
           </button>
           <BorderedButton title="Cancel" link="/blog" />
         </Box>
-        {isPostCreated === true ? (
+        {isPostUpdated === true ? (
           <Alert icon={<Check fontSize="inherit" />} severity="success">
-            The post was created successfully!
+            The post was updated successfully!
           </Alert>
-        ) : isPostCreated === false ? (
+        ) : isPostUpdated === false ? (
           <Alert icon={<Check fontSize="inherit" />} severity="error">
-            The post wasn&apos;t created.
+            The post wasn&apos;t updated.
           </Alert>
         ) : null}
       </Grid>
@@ -85,4 +125,4 @@ const CreatePost = () => {
   );
 };
 
-export default CreatePost;
+export default EditPost;

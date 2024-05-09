@@ -1,10 +1,11 @@
-import { Delete, Edit } from "@mui/icons-material";
-import { Box, Grid, IconButton, Typography } from "@mui/material";
+"use client";
+import { Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import EditIcons from "./EditIcons";
 
 export interface PostCardProps {
+  id: number;
   title: string;
   date: Date;
   image: string;
@@ -13,6 +14,7 @@ export interface PostCardProps {
 }
 
 const PostCard: React.FC<PostCardProps> = ({
+  id,
   title,
   date,
   image,
@@ -25,7 +27,7 @@ const PostCard: React.FC<PostCardProps> = ({
     day: "numeric",
   });
 
-  const MAX_TITLE_LENGTH = 54;
+  const MAX_TITLE_LENGTH = 28;
   let cardTitle = title;
   if (title.length > MAX_TITLE_LENGTH) {
     cardTitle = title.substring(0, MAX_TITLE_LENGTH) + "...";
@@ -76,7 +78,7 @@ const PostCard: React.FC<PostCardProps> = ({
       >
         {cardDescription}
       </Typography>
-      <EditIcons />
+      <EditIcons postId={id} />
     </Grid>
   );
 };
