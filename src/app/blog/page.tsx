@@ -2,10 +2,13 @@ import React from "react";
 import StandardLayout from "../components/layouts/StandardLayout";
 import Blog from "../components/Blog/Blog";
 import prisma from "../../../lib/prisma";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../../../utils/authOptions";
 
 const page = async () => {
   const posts = await prisma.post.findMany();
-  console.log(posts);
+  const session = await getServerSession(authOptions);
+
   return (
     <StandardLayout
       title="Our Bloogs & Insights"

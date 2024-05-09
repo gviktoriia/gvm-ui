@@ -1,11 +1,12 @@
 "use client";
-import React from "react";
+
 import StandardLayout from "../layouts/StandardLayout";
 import { Box, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import { Post } from "@prisma/client";
 import { usePathname } from "next/navigation";
 import EditIcons from "../cards/EditIcons";
+import { useSession } from "next-auth/react";
 
 interface PostWithAdmin extends Post {
   admin: {
@@ -19,6 +20,9 @@ interface PostDetailsProps {
 
 const PostDetails: React.FC<PostDetailsProps> = ({ posts }) => {
   const path: string = usePathname();
+  const { data: session, status, update } = useSession();
+  const isAuth = status === "authenticated";
+
   const routeId: string = path.substring(path.lastIndexOf("/") + 1);
 
   const filteredPost = posts.filter((post) => post.id.toString() === routeId);
@@ -94,7 +98,7 @@ const PostDetails: React.FC<PostDetailsProps> = ({ posts }) => {
               >
                 {post.description}
               </Typography>
-              <EditIcons postId={post.id} />
+              {isAuth ? <EditIcons postId={post.id} /> : null}
             </Box>
             <Box
               position="relative"

@@ -11,6 +11,7 @@ export interface PostCardProps {
   image: string;
   description: string;
   link: string;
+  isAdmin?: boolean;
 }
 
 const PostCard: React.FC<PostCardProps> = ({
@@ -20,6 +21,7 @@ const PostCard: React.FC<PostCardProps> = ({
   image,
   description,
   link,
+  isAdmin,
 }) => {
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
     year: "numeric",
@@ -78,7 +80,7 @@ const PostCard: React.FC<PostCardProps> = ({
       >
         {cardDescription}
       </Typography>
-      <EditIcons postId={id} />
+      {isAdmin ? <EditIcons postId={id} /> : null}
     </Grid>
   );
 };

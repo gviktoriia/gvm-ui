@@ -9,8 +9,13 @@ import {
   OutlinedInput,
 } from "@mui/material";
 import React from "react";
+import { StandardFormProps } from "./StandardForm";
 
-const PasswordForm = () => {
+const PasswordForm: React.FC<StandardFormProps> = ({
+  defaultValue,
+  onChange,
+  ...rest
+}) => {
   const [showPassword, setShowPassword] = React.useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -39,6 +44,9 @@ const PasswordForm = () => {
           </InputAdornment>
         }
         label="Password"
+        name="password"
+        onChange={onChange}
+        {...rest}
       />
     </FormControl>
   );

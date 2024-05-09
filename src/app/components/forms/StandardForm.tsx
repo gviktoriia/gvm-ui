@@ -1,12 +1,15 @@
+"use client";
+
 import { TextField } from "@mui/material";
 import React from "react";
 
 export interface StandardFormProps {
-  title: string;
+  title?: string;
   example?: string;
   name?: string;
   required?: boolean;
   defaultValue?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const StandardForm: React.FC<StandardFormProps> = ({
@@ -15,6 +18,8 @@ const StandardForm: React.FC<StandardFormProps> = ({
   name,
   required,
   defaultValue,
+  onChange,
+  ...rest
 }) => {
   return (
     <TextField
@@ -29,6 +34,8 @@ const StandardForm: React.FC<StandardFormProps> = ({
       InputProps={{
         placeholder: example,
       }}
+      onChange={onChange}
+      {...rest}
     />
   );
 };

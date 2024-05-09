@@ -11,17 +11,20 @@ interface BlogData {
 }
 
 const Blog: React.FC<BlogData> = ({ posts }) => {
-  const { status } = useSession();
+  const { data: session, status, update } = useSession();
+  const isAuth = status === "authenticated";
   return (
     <Box>
-      <Box
-        sx={{
-          width: "100%",
-          textAlign: "center",
-        }}
-      >
-        <FilledButton title="New post" link="/blog/create/" />
-      </Box>
+      {isAuth && (
+        <Box
+          sx={{
+            width: "100%",
+            textAlign: "center",
+          }}
+        >
+          <FilledButton title="New post" link="/blog/create/" />
+        </Box>
+      )}
       <Grid container textAlign="center" justifyContent="center">
         {posts.map((post) => (
           <PostCard
@@ -32,6 +35,7 @@ const Blog: React.FC<BlogData> = ({ posts }) => {
             image={post.image}
             description={post.description}
             link={"blog/" + post.id}
+            isAdmin={isAuth}
           />
         ))}
       </Grid>

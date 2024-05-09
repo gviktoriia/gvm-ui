@@ -1,3 +1,4 @@
+"use client";
 import { Box, Typography } from "@mui/material";
 import BorderedButton from "../buttons/BorderedButton";
 import { useSession } from "next-auth/react";
@@ -27,7 +28,7 @@ export function Auth() {
         </Box>
       )}
 
-      {!session && <BorderedButton title="Login" link="/login" />}
+      {!session && <BorderedButton title="Login" link="/api/auth/signin" />}
     </Box>
   );
 }
