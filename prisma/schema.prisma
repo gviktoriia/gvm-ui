@@ -11,7 +11,7 @@ datasource db {
 
 model Admin {
   id        Int    @id @default(autoincrement())
-  nickname  String
+  nickname  String @unique
   email     String @unique
   password  String
   posts     Post[]
@@ -21,7 +21,7 @@ model Post {
   id             Int      @id @default(autoincrement())
   title          String
   category       String
-  author         String
+  author         String   @map(name: "author") @default(db."admins"."nickname")
   description    String
   image          String
   createdAt      DateTime @default(now()) @map(name: "created_at")
