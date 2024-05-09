@@ -16,7 +16,7 @@ const EditIcons: React.FC<EditIconsProps> = ({ postId }) => {
 
   return (
     <Box display="flex" flexDirection="row" justifyContent="center" gap={6}>
-      <Link href={`/blog`}>
+      <Link href="/blog">
         <IconButton
           aria-label="delete"
           size="large"
@@ -25,7 +25,7 @@ const EditIcons: React.FC<EditIconsProps> = ({ postId }) => {
           <Delete />
         </IconButton>
       </Link>
-      <Link href={`/blog/${postId}/edit`} passHref>
+      <Link href={"/blog/" + postId + "/edit"} passHref>
         <IconButton aria-label="delete" size="large">
           <Edit />
         </IconButton>
