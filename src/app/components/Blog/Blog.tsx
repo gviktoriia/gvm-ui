@@ -4,7 +4,6 @@ import React from "react";
 import PostCard from "../cards/PostCard";
 import { useSession } from "next-auth/react";
 import FilledButton from "../buttons/FilledButton";
-import { POSTS } from "../../../../utils/postUtils";
 import { Post } from "@prisma/client";
 
 interface BlogData {

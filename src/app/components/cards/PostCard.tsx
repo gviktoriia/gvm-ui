@@ -27,7 +27,7 @@ const PostCard: React.FC<PostCardProps> = ({
     day: "numeric",
   });
 
-  const MAX_TITLE_LENGTH = 28;
+  const MAX_TITLE_LENGTH = 26;
   let cardTitle = title;
   if (title.length > MAX_TITLE_LENGTH) {
     cardTitle = title.substring(0, MAX_TITLE_LENGTH) + "...";
@@ -46,7 +46,7 @@ const PostCard: React.FC<PostCardProps> = ({
     >
       <Image
         src={image}
-        alt={title}
+        alt={cardTitle}
         width={300}
         height={200}
         style={{
