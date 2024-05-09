@@ -14,7 +14,7 @@ const StandardForm: React.FC<StandardFormProps> = ({
   example,
   name,
   required,
-  defaultValue = " ",
+  defaultValue,
 }) => {
   return (
     <TextField
