@@ -70,7 +70,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           fontWeight: "700",
           fontSize: "20px",
           maxWidth: "300px",
-          color: "black",
+          color: "text.primary",
           textAlign: "right",
         }}
       >
