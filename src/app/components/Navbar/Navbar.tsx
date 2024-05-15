@@ -18,13 +18,13 @@ import {
 } from "@mui/material";
 import ModeSwitcher from "./ModeSwitcher";
 import { Auth } from "../Auth/Auth";
+import { NAVBAR_OPTIONS } from "../../../../utils/navbarUtils";
 
 interface NavbarProps {
   mode: string;
   toggle: () => void;
 }
 
-const pages = ["About", "Pricing", "Integration", "Blog", "Documentation"];
 const drawerWidth = 240;
 
 const Navbar = ({ mode, toggle }: NavbarProps) => {
@@ -36,7 +36,7 @@ const Navbar = ({ mode, toggle }: NavbarProps) => {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <List>
-        {pages.map((item) => (
+        {NAVBAR_OPTIONS.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton
               sx={{ textAlign: "center" }}
@@ -133,7 +133,7 @@ const Navbar = ({ mode, toggle }: NavbarProps) => {
                 justifyContent: "center",
               }}
             >
-              {pages.map((page) => (
+              {NAVBAR_OPTIONS.map((page) => (
                 <Button
                   key={page}
                   component="a"

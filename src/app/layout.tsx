@@ -35,7 +35,6 @@ export default function RootLayout({
       >
         <ThemeProvider theme={theme}>
           <CssBaseline />
-
           <Providers>
             <Navbar
               mode={mode}

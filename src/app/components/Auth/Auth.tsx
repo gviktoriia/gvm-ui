@@ -4,7 +4,7 @@ import BorderedButton from "../buttons/BorderedButton";
 import { useSession } from "next-auth/react";
 
 export function Auth() {
-  const { data: session, status, update } = useSession();
+  const { data: session, status } = useSession();
 
   return (
     <Box>
