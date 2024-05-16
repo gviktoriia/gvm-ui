@@ -1,14 +1,5 @@
-"use client";
-
-import { CssBaseline, PaletteMode } from "@mui/material";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { useMemo, useState } from "react";
-import { getDesignTokens } from "../../theme/theme";
-import Head from "next/head";
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
-import { Providers } from "./components/Auth/Provider";
 import { Metadata } from "next";
+import RootLayoutProvider from "./RootLayoutProvider";
 
 export const metadata: Metadata = {
   title: "GVM-UI Template | NextJS Methodology",
@@ -38,12 +29,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [mode, setMode] = useState<PaletteMode>("light");
-
-  const theme = useMemo(() => {
-    return createTheme(getDesignTokens(mode));
-  }, [mode]);
-
   return (
     <html lang="en">
       <body
@@ -53,17 +38,7 @@ export default function RootLayout({
           paddingRight: "5%",
         }}
       >
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <Providers>
-            <Navbar
-              mode={mode}
-              toggle={() => setMode(mode === "light" ? "dark" : "light")}
-            />
-            {children}
-          </Providers>
-          <Footer />
-        </ThemeProvider>
+        <RootLayoutProvider>{children}</RootLayoutProvider>
       </body>
     </html>
   );
