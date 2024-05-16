@@ -8,6 +8,30 @@ import Head from "next/head";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import { Providers } from "./components/Auth/Provider";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "GVM-UI Template | NextJS Methodology",
+  description:
+    "Explore the best practices, insights, and methodologies for building high-performance web applications with Next.js. Learn about server-side rendering, static site generation, API routes, and more to optimize your Next.js projects.",
+  metadataBase: new URL("https://gvm-ui.vercel.app/"),
+  keywords: "Next.js, Starter Template, GVM-UI, NextJS methodology",
+  openGraph: {
+    title: "NextJS Methodology | Best Practices and Insights",
+    description:
+      "Explore the best practices, insights, and methodologies for building high-performance web applications with Next.js. Learn about server-side rendering, static site generation, API routes, and more to optimize your Next.js projects.",
+    url: "https://gvm-ui.vercel.app/",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "https://gvm-ui.vercel.app/",
+    creator: "@gv_v_m",
+    title: "NextJS Methodology | Best Practices and Insights",
+    description:
+      "Explore the best practices, insights, and methodologies for building high-performance web applications with Next.js. Learn about server-side rendering, static site generation, API routes, and more to optimize your Next.js projects.",
+  },
+};
 
 export default function RootLayout({
   children,
@@ -22,10 +46,6 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <Head>
-        <title>GVM-UI Template</title>
-        <meta property="og:title" content="GVM-UI Template" key="title" />
-      </Head>
       <body
         style={{
           margin: 0,
