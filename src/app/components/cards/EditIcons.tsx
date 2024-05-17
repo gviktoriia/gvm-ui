@@ -4,6 +4,7 @@ import { Box, IconButton } from "@mui/material";
 import Link from "next/link";
 import React from "react";
 import { deletePost } from "../../../../actions/post/actions";
+import { BLOG_ROUTE } from "../../../../utils/routesUtil";
 
 interface EditIconsProps {
   postId: number;
@@ -16,7 +17,7 @@ const EditIcons: React.FC<EditIconsProps> = ({ postId }) => {
 
   return (
     <Box display="flex" flexDirection="row" justifyContent="center" gap={6}>
-      <Link href="/blog">
+      <Link href={BLOG_ROUTE}>
         <IconButton
           aria-label="delete"
           size="large"
@@ -25,7 +26,7 @@ const EditIcons: React.FC<EditIconsProps> = ({ postId }) => {
           <Delete />
         </IconButton>
       </Link>
-      <Link href={"/blog/" + postId + "/edit"} passHref>
+      <Link href={`${BLOG_ROUTE}/${postId}/edit`} passHref>
         <IconButton aria-label="delete" size="large">
           <Edit />
         </IconButton>

@@ -7,6 +7,7 @@ import MultilineForm from "../forms/MultilineForm";
 import BorderedButton from "../buttons/BorderedButton";
 import { createPost } from "../../../../actions/post/actions";
 import { Check } from "@mui/icons-material";
+import { BLOG_ROUTE } from "../../../../utils/routesUtil";
 
 const CreatePost = () => {
   const ref = useRef<HTMLFormElement>(null);
@@ -69,7 +70,7 @@ const CreatePost = () => {
           >
             Create
           </button>
-          <BorderedButton title="Cancel" link="/blog" />
+          <BorderedButton title="Cancel" link={BLOG_ROUTE} />
         </Box>
         {isPostCreated === true ? (
           <Alert icon={<Check fontSize="inherit" />} severity="success">

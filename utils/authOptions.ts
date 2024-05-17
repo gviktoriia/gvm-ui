@@ -2,10 +2,11 @@ import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GithubProvider from "next-auth/providers/github";
 import { login } from '../lib/auth';
+import { LOGIN_ROUTE } from "./routesUtil";
 
 export const authOptions: NextAuthOptions = {
   pages: {
-    signIn: '/login', 
+    signIn: LOGIN_ROUTE, 
   },
   providers: [
     GithubProvider({

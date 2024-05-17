@@ -3,6 +3,10 @@ import StandardLayout from "../../layouts/StandardLayout";
 import { Grid } from "@mui/material";
 import GradientArrowButton from "../../buttons/GradientArrowButton";
 import StartIconButton from "../../buttons/StartIconButton";
+import {
+  DOCUMENTATION_ROUTE,
+  LOGIN_ROUTE,
+} from "../../../../../utils/routesUtil";
 
 const Hero = () => {
   return (
@@ -14,8 +18,8 @@ const Hero = () => {
       align="center"
       content={
         <Grid container justifyContent="center" gap={2}>
-          <GradientArrowButton title="Get started" link="/login" />
-          <StartIconButton title="Read the docs" link="/documentation" />
+          <GradientArrowButton title="Get started" link={LOGIN_ROUTE} />
+          <StartIconButton title="Read the docs" link={DOCUMENTATION_ROUTE} />
         </Grid>
       }
     />

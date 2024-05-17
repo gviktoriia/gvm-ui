@@ -3,6 +3,7 @@
 import { create } from "domain";
 import prisma from "../../lib/prisma";
 import { revalidatePath } from "next/cache";
+import { BLOG_ROUTE } from "../../utils/routesUtil";
 
 export const createPost = async (formData: FormData) => {
     
@@ -25,7 +26,7 @@ export const createPost = async (formData: FormData) => {
 
         if(createdPost) {
             console.log('Post created successfully: ', createdPost)
-            revalidatePath("/blog");
+            revalidatePath(BLOG_ROUTE);
         } else {
             console.log('Failed to create post.')}
         } catch(error) {
@@ -76,5 +77,5 @@ export const deletePost = async (routeId: Number) => {
         },
     });
 
-    revalidatePath("/blog");
+    revalidatePath(BLOG_ROUTE);
 };

@@ -8,6 +8,7 @@ import BorderedButton from "../buttons/BorderedButton";
 import { usePathname } from "next/navigation";
 import { Post } from "@prisma/client";
 import { Check } from "@mui/icons-material";
+import { BLOG_ROUTE } from "../../../../utils/routesUtil";
 
 interface EditPostProps {
   postsInfo: Post[];
@@ -109,7 +110,7 @@ const EditPost: React.FC<EditPostProps> = ({ postsInfo }) => {
           >
             Edit
           </button>
-          <BorderedButton title="Cancel" link="/blog" />
+          <BorderedButton title="Cancel" link={BLOG_ROUTE} />
         </Box>
         {isPostUpdated === true ? (
           <Alert icon={<Check fontSize="inherit" />} severity="success">

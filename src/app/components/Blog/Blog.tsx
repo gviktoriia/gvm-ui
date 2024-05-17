@@ -5,6 +5,7 @@ import PostCard from "../cards/PostCard";
 import { useSession } from "next-auth/react";
 import FilledButton from "../buttons/FilledButton";
 import { Post } from "@prisma/client";
+import { BLOG_CREATE_ROUTE, BLOG_ROUTE } from "../../../../utils/routesUtil";
 
 interface BlogData {
   posts: Post[];
@@ -22,7 +23,7 @@ const Blog: React.FC<BlogData> = ({ posts }) => {
             textAlign: "center",
           }}
         >
-          <FilledButton title="New post" link="/blog/create/" />
+          <FilledButton title="New post" link={BLOG_CREATE_ROUTE} />
         </Box>
       )}
       <Grid container textAlign="center" justifyContent="center">
@@ -34,7 +35,7 @@ const Blog: React.FC<BlogData> = ({ posts }) => {
             date={post.createdAt}
             image={post.image}
             description={post.description}
-            link={"blog/" + post.id}
+            link={`${BLOG_ROUTE}/${post.id}`}
             isAdmin={isAuth}
           />
         ))}
